@@ -1,8 +1,9 @@
 import 'package:math_expressions/math_expressions.dart';
 import 'package:flutter/material.dart';
+import '/pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import './pages/calc_button.dart';
+
 
 void main() {
   runApp(CalcApp());
@@ -12,6 +13,17 @@ class CalcApp extends StatefulWidget {
 
 
   @override
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'SoulFenix',
+      theme: ThemeData(
+        primaryColor: Color(0xFFCC2222),
+        accentColor: Color(0xFFDDDDDD),
+      ),
+      home: HomePage(),
+
   CalcAppState createState() => CalcAppState();
 }
 
