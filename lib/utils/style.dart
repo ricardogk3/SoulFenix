@@ -15,8 +15,11 @@ var titulo = GoogleFonts.oswald(
 );
 var texto = GoogleFonts.pragatiNarrow(
     textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w400));
-var legenda = TextStyle(fontSize: 16, color: Colors.grey.shade600);
+var legenda = TextStyle(fontSize: 16, color: Color(0xFFDDDDDD));
+var legendaMenu = TextStyle(fontSize: 16, color: Color(0xFFDDDDDD));
 var botao = ElevatedButton.styleFrom(
     primary: Color(0xFFCC2222),
     padding: EdgeInsets.symmetric(horizontal: 10),
     textStyle: TextStyle(fontSize: 13, fontWeight: FontWeight.w600));
+var bordaRedonda = BoxDecoration(
+    borderRadius: BorderRadius.circular(5), color: Color(0xFFFFFFFF));

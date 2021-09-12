@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'calc_app.dart';
 import '../widgets/cartao.dart';
 import '../utils/style.dart';
@@ -11,6 +12,11 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
+
+var _url = 'https://www.grupopetropolis.com.br';
+void _launchURL() async => await canLaunch(_url)
+    ? await launch(_url)
+    : throw 'Não foi possível abrir $_url';
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -37,24 +43,42 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DrawerHeader(
-                  child: Container(
-                      color: Color(0xFFFFFFFF),
-                      child: Center(
-                          child: Image.asset("assets/images/petropolis.png"))),
+                  child: InkWell(
+                    onTap: () {
+                      _launchURL();
+                    },
+                    child: Container(
+                        decoration: bordaRedonda,
+                        child: Center(
+                            child:
+                                Image.asset("assets/images/petropolis.png"))),
+                  ),
                 ),
+                SizedBox(height: 20),
                 InkWell(
                   onTap: () {
                     Navigator.pop(context);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Mapa()));
                   },
-                  child: Container(
-                    child: Text(
-                      "Mapa",
-                      style: TextStyle(
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w300),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.map,
+                      size: 32,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    subtitle: Text(
+                      "Locais de reciclagem",
+                      style: legendaMenu,
+                    ),
+                    title: Container(
+                      child: Text(
+                        "Mapa",
+                        style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w300),
+                      ),
                     ),
                   ),
                 ),
@@ -64,13 +88,52 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => CalcApp()));
                   },
-                  child: Container(
-                    child: Text(
-                      "Calculadora",
-                      style: TextStyle(
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w300),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.calculate_rounded,
+                      size: 32,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    subtitle: Text(
+                      "Conversor de peso",
+                      style: legendaMenu,
+                    ),
+                    title: Container(
+                      child: Text(
+                        "Calculadora",
+                        style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w300),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 20,
+                  width: 100,
+                  color: Color(0xFFFFFF),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.calculate_rounded,
+                    size: 32,
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CalcApp()));
+                    },
+                    child: Container(
+                      child: Text(
+                        "Calculadora",
+                        style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w300),
+                      ),
                     ),
                   ),
                 ),
@@ -126,7 +189,9 @@ class _HomePageState extends State<HomePage> {
                             Padding(
                               padding:
                                   const EdgeInsets.only(top: 15, bottom: 5),
-                              child: Image.asset("assets/images/metal.jpg"),
+                              child: Container(
+                                  child:
+                                      Image.asset("assets/images/metal.jpg")),
                             ),
                             Container(
                               width: double.maxFinite,
