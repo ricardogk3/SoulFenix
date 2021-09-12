@@ -30,37 +30,37 @@ class CalcAppState extends State<CalcApp> {
     print(text);
     switch (text) {
       case "PET":
-        valor = '0,0012';
+        valor = '0,60';
         break;
       case "PEAD":
-        valor = '0,002';
+        valor = '1,20';
         break;
       case "PVC":
-        valor = '0,003';
+        valor = '1,00';
         break;
       case "PP":
-        valor = '0,0001';
+        valor = '0,90';
         break;
       case "PS":
-        valor = '0,00122';
+        valor = '0,70';
         break;
       case "PEBD":
-        valor = '0,00142';
+        valor = '1,05';
         break;
       case "ALUMÍNIO":
-        valor = '1,2';
+        valor = '5';
         break;
       case "PAPEL":
-        valor = '0,00125';
+        valor = '0,60';
         break;
       case "COBRE":
-        valor = '5,5';
+        valor = '15,5';
         break;
       case "TETRA PAK":
-        valor = '0,00142';
+        valor = '1,50';
         break;
       case "VIDRO":
-        valor = '0,0012';
+        valor = '3,00';
         break;
     }
 
@@ -70,7 +70,8 @@ class CalcAppState extends State<CalcApp> {
           _history = _expression + "*" + valor;
           _expression = (double.parse(_expression.replaceAll(',', '.')) *
                   double.parse(valor.replaceAll(',', '.')))
-              .toStringAsFixed(4);
+              .toStringAsFixed(2);
+          _expression = "R\$ " + _expression.replaceAll('.', ',');
           czerador = false;
         }
       }
