@@ -23,6 +23,7 @@ class CalcButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      aligment: Aligment.center;
       margin: EdgeInsets.all(3),
       child: SizedBox(
         width: 60,
