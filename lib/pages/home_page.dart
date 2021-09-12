@@ -32,18 +32,48 @@ class _HomePageState extends State<HomePage> {
           width: double.infinity,
           height: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.only(top: 50, left: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                DrawerHeader(
+                  child: Container(
+                      color: Color(0xFFFFFFFF),
+                      child: Center(
+                          child: Image.asset("assets/images/petropolis.png"))),
+                ),
                 InkWell(
                   onTap: () {
+                    Navigator.pop(context);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Mapa()));
                   },
                   child: Container(
-                    child: Text("Texto"),
+                    child: Text(
+                      "Mapa",
+                      style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w300),
+                    ),
                   ),
-                )
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CalcApp()));
+                  },
+                  child: Container(
+                    child: Text(
+                      "Calculadora",
+                      style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
