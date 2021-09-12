@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utils/style.dart';
 
 Alerta(String titulo, String texto, String imagem, String legenda) {
   return AlertDialog(
@@ -8,11 +9,10 @@ Alerta(String titulo, String texto, String imagem, String legenda) {
     contentPadding: EdgeInsets.all(2),
     insetPadding: EdgeInsets.all(4),
     actions: [
-      TextButton(
-        child: const Text('Voltar'),
-        onPressed: () {
-          // Navigator.pop();
-        },
+      ElevatedButton(
+        style: botao,
+        onPressed: () {},
+        child: Text("Voltar"),
       ),
     ],
     title: Text(titulo),
