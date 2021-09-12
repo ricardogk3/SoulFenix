@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'calc_app.dart';
-import '../widgets/alerta.dart';
 import '../widgets/cartao.dart';
 import '../utils/style.dart';
+import 'mapa.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,8 +35,14 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(top: 50, left: 10),
             child: Column(
               children: [
-                Container(
-                  child: Text("Texto"),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Mapa()));
+                  },
+                  child: Container(
+                    child: Text("Texto"),
+                  ),
                 )
               ],
             ),

@@ -3,6 +3,10 @@
    <application
         android:label="soulfenix"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyAc1CW39mnZU0aWNUgmYRFf0X0-pIpvqVg"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
