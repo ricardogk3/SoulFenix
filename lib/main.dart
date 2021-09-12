@@ -17,8 +17,9 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFFCC2222),
         accentColor: Color(0xFFDDDDDD),
-        textTheme:
-            GoogleFonts.sourceSansProTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.pragatiNarrowTextTheme(
+          (Theme.of(context).textTheme),
+        ),
       ),
     );
   }
