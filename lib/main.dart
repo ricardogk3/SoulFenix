@@ -1,5 +1,6 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
+// import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 import '/pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,26 +20,24 @@ class App extends StatelessWidget {
           (Theme.of(context).textTheme),
         ),
       ),
-      home: AnimatedSplashScreen(
+      home: SplashScreenView(
+        navigateRoute: HomePage(),
         duration: 5000,
-        splashTransition: SplashTransition.fadeTransition,
-        curve: Curves.easeInOut,
-        animationDuration: Duration(seconds: 5),
-        centered: true,
-        backgroundColor: Colors.black,
-        splash: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                alignment: Alignment.center,
-                matchTextDirection: true,
-                repeat: ImageRepeat.noRepeat,
-                image: AssetImage("assets/images/splash_screen.png"),
-              ),
-            ),
-          ),
+        imageSize: 150,
+        imageSrc: "assets/images/splash_screen.png",
+        text: "SoulFenix",
+        textType: TextType.ColorizeAnimationText,
+        textStyle: TextStyle(
+          fontSize: 50.0,
         ),
-        nextScreen: HomePage(),
+        colors: [
+          Colors.white,
+          Colors.red,
+          Colors.white,
+          Colors.white,
+          Colors.white,
+        ],
+        backgroundColor: Colors.black,
       ),
     );
   }

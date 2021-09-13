@@ -1,4 +1,3 @@
-  
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -39,6 +38,7 @@ class CalcButton extends StatelessWidget {
                 fontSize: textSize,
               ),
             ),
+            textAlign: TextAlign.center,
           ),
           color: fillColor != null ? Color(fillColor!) : null,
           textColor: Color(textColor),

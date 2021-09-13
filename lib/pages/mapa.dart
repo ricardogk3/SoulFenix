@@ -18,6 +18,61 @@ class _MapaState extends State<Mapa> {
     mapController = controller;
   }
 
+  Set<Marker> _createMarker() {
+    return {
+      Marker(
+        markerId: MarkerId("marker_1"),
+        infoWindow: InfoWindow(title: "Reciclagem"),
+        position: _center,
+      ),
+      Marker(
+        markerId: MarkerId("marker_2"),
+        infoWindow: InfoWindow(title: "Ecoponto"),
+        position: LatLng(-23.5488487, -46.621715),
+      ),
+      Marker(
+        markerId: MarkerId("marker_3"),
+        infoWindow: InfoWindow(title: "Reciclagem"),
+        position: LatLng(-23.5450487, -46.627715),
+      ),
+      Marker(
+        markerId: MarkerId("Centro"),
+        infoWindow: InfoWindow(title: "Centro"),
+        position: _center,
+      ),
+      Marker(
+        markerId: MarkerId("marker_5"),
+        infoWindow: InfoWindow(title: "Ecoponto"),
+        position: LatLng(-23.5626487, -46.626915),
+      ),
+      Marker(
+        markerId: MarkerId("marker_6"),
+        infoWindow: InfoWindow(title: "Ecoponto"),
+        position: LatLng(-23.5538187, -46.628715),
+      ),
+      Marker(
+        markerId: MarkerId("marker_7"),
+        infoWindow: InfoWindow(title: "Reciclagem"),
+        position: LatLng(-23.5509487, -46.648715),
+      ),
+      Marker(
+        markerId: MarkerId("marker_8"),
+        infoWindow: InfoWindow(title: "Ecoponto"),
+        position: LatLng(-23.5541487, -46.642715),
+      ),
+      Marker(
+        markerId: MarkerId("marker_9"),
+        infoWindow: InfoWindow(title: "Reciclagem"),
+        position: LatLng(-23.5400487, -46.638715),
+      ),
+      Marker(
+        markerId: MarkerId("marker_10"),
+        infoWindow: InfoWindow(title: "Ecoponto"),
+        position: LatLng(-23.56487, -46.637815),
+      ),
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +86,12 @@ class _MapaState extends State<Mapa> {
         centerTitle: true,
       ),
       body: GoogleMap(
+        markers: _createMarker(),
         onMapCreated: _onMapCreated,
+        myLocationEnabled: true,
         initialCameraPosition: CameraPosition(
           target: _center,
-          zoom: 11.0,
+          zoom: 17.0,
         ),
         // markers: ,
       ),
