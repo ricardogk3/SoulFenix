@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:soulfenix/pages/calc_button.dart';
+import 'package:soulfenix/utils/style.dart';
 
 class Latinha extends StatefulWidget {
   @override
@@ -37,15 +38,15 @@ class LatinhaState extends State<Latinha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDDDDDD),
       appBar: AppBar(
-        title: Text("Latinheira\$",
+        title: Text("Latinheira",
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.w200,
             )),
         centerTitle: true,
       ),
-      backgroundColor: Color(0xFFDDDDDD),
       body: Container(
         padding: EdgeInsets.all(12),
         child: Form(
@@ -69,7 +70,9 @@ class LatinhaState extends State<Latinha> {
               ),
               SizedBox(height: 10),
               TextFormField(
+                cursorColor: Color(0xFFCC2222),
                 keyboardType: TextInputType.number,
+                style: TextStyle(fontSize: 26),
                 textAlign: TextAlign.center,
                 validator: (String? texto) {
                   if (texto != null && texto.isNotEmpty) {
@@ -93,16 +96,13 @@ class LatinhaState extends State<Latinha> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   labelText: "Quantidade",
+                  labelStyle: TextStyle(color: Color(0xFFCC2222)),
                 ),
                 onChanged: (texto) => {quantidade = texto, print(quantidade)},
               ),
-
               SizedBox(height: 10),
-
-              OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  side: BorderSide(width: 1.0, color: Color(0xFFCC2222)),
-                ),
+              ElevatedButton(
+                style: botao,
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
                     print("logou1");
@@ -129,10 +129,10 @@ class LatinhaState extends State<Latinha> {
                 child: Container(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "Converter quantidade de latinha para dinheiro",
+                    "Converter quantidade \nde latinha para dinheiro",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Color(0xFFCC2222),
+                      color: Color(0xFFFFFFFF),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),

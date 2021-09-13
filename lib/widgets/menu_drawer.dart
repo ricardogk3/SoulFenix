@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soulfenix/pages/calc_app.dart';
+import 'package:soulfenix/pages/latinha.dart';
 import 'package:soulfenix/pages/mapa.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../utils/style.dart';
@@ -61,12 +62,12 @@ class MenuDrawer extends StatelessWidget {
                   ),
                 ),
               ),
-              /***** CALCULADORA ****/
+              /***** CALCULADORA LATINHA ****/
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcApp()));
+                      MaterialPageRoute(builder: (context) => Latinha()));
                 },
                 child: ListTile(
                   leading: Icon(
