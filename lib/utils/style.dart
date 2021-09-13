@@ -13,10 +13,21 @@ var titulo = GoogleFonts.oswald(
       color: Color(0xFF000000),
       letterSpacing: 3),
 );
+var tituloApp = GoogleFonts.oswald(
+  textStyle: TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.w300,
+    color: Color(0xFFFFFFFF),
+    letterSpacing: 3,
+  ),
+);
 var texto = GoogleFonts.pragatiNarrow(
     textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w400));
 var legenda = TextStyle(fontSize: 16, color: Color(0xFFDDDDDD));
 var legendaMenu = TextStyle(fontSize: 16, color: Color(0xFFDDDDDD));
+var itemMenu = TextStyle(
+    color: Color(0xFFFFFFFF), fontSize: 24, fontWeight: FontWeight.w300);
+
 var botao = ElevatedButton.styleFrom(
     primary: Color(0xFFCC2222),
     padding: EdgeInsets.symmetric(horizontal: 10),

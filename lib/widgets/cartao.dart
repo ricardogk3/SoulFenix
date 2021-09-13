@@ -20,34 +20,30 @@ Column Cartao(String titulo, String texto, String imagem, String legenda) {
       ),
       Container(
         padding: EdgeInsets.all(2),
-        // height: 120,
         child: Card(
-          child: Expanded(
-            child: Container(
-              padding: EdgeInsets.all(5),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    child: Text(texto,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w400)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15, bottom: 5),
-                    child: Image.asset(imagem),
-                  ),
-                  Container(
-                    width: double.maxFinite,
-                    child: Text(
-                      legenda,
+          child: Container(
+            padding: EdgeInsets.all(5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  child: Text(texto,
                       style:
-                          TextStyle(fontSize: 16, color: Colors.grey.shade600),
-                      textAlign: TextAlign.right,
-                    ),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400)),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 15, bottom: 5),
+                  child: Image.asset(imagem),
+                ),
+                Container(
+                  width: double.maxFinite,
+                  child: Text(
+                    legenda,
+                    style: TextStyle(fontSize: 16, color: Colors.grey.shade600),
+                    textAlign: TextAlign.right,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
